@@ -1,0 +1,13 @@
+venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+*.log
+*.sqlite
+*.csv
+chroma_db/
+.langgraph_api/

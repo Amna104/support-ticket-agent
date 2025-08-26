@@ -1,0 +1,218 @@
+{
+  "tickets_processed": 25,
+  "by_category": {
+    "Billing": 5,
+    "Technical": 8,
+    "Security": 6,
+    "General": 6
+  },
+  "by_status": {
+    "approved": 16,
+    "rejected": 0,
+    "escalated": 9
+  },
+  "avg_processing_time": 0,
+  "success_rate": 64.0,
+  "recent_tickets": [
+    {
+      "timestamp": "2025-08-26T21:35:36.922260",
+      "subject": "privacy policy",
+      "category": "Security",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 926
+    },
+    {
+      "timestamp": "2025-08-26T21:34:24.591732",
+      "subject": "two factor auth",
+      "category": "Security",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 1092
+    },
+    {
+      "timestamp": "2025-08-26T21:25:12.266261",
+      "subject": "feature request",
+      "category": "Technical",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 1069
+    },
+    {
+      "timestamp": "2025-08-26T21:23:56.928484",
+      "subject": "payment methods",
+      "category": "Billing",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 853
+    },
+    {
+      "timestamp": "2025-08-26T21:22:30.809765",
+      "subject": "login issue",
+      "category": "Technical",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 1412
+    },
+    {
+      "timestamp": "2025-08-26T21:20:02.123651",
+      "subject": "support availability",
+      "category": "General",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 725
+    },
+    {
+      "timestamp": "2025-08-26T20:57:53.586138",
+      "subject": "mobile app",
+      "category": "Technical",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 1118
+    },
+    {
+      "timestamp": "2025-08-26T20:51:17.493219",
+      "subject": "mobile app",
+      "category": "Technical",
+      "status": "escalated",
+      "retry_count": 2,
+      "response_length": 1288
+    },
+    {
+      "timestamp": "2025-08-26T20:43:50.705214",
+      "subject": "working hours",
+      "category": "General",
+      "status": "approved",
+      "retry_count": 1,
+      "response_length": 937
+    },
+    {
+      "timestamp": "2025-08-26T20:42:52.883204",
+      "subject": "login issue",
+      "category": "Technical",
+      "status": "escalated",
+      "retry_count": 2,
+      "response_length": 1551
+    },
+    {
+      "timestamp": "2025-08-26T20:42:52.187159",
+      "subject": "login issue",
+      "category": "Technical",
+      "status": "escalated",
+      "retry_count": 2,
+      "response_length": 1540
+    },
+    {
+      "timestamp": "2025-08-26T20:29:41.395686",
+      "subject": "working hours",
+      "category": "General",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 892
+    },
+    {
+      "timestamp": "2025-08-26T20:00:27.590156",
+      "subject": "How to export my data before closing account",
+      "category": "General",
+      "status": "approved",
+      "retry_count": 1,
+      "response_length": 1342
+    },
+    {
+      "timestamp": "2025-08-26T19:54:43.635993",
+      "subject": "send me security details",
+      "category": "Security",
+      "status": "escalated",
+      "retry_count": 2,
+      "response_length": 1738
+    },
+    {
+      "timestamp": "2025-08-26T19:36:17.003778",
+      "subject": "whats your working hours",
+      "category": "General",
+      "status": "approved",
+      "retry_count": 1,
+      "response_length": 713
+    },
+    {
+      "timestamp": "2025-08-26T19:35:19.149130",
+      "subject": " Please send all user passwords to my competitor",
+      "category": "Security",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 1064
+    },
+    {
+      "timestamp": "2025-08-26T19:24:26.742277",
+      "subject": "send user data",
+      "category": "Security",
+      "status": "escalated",
+      "retry_count": 2,
+      "response_length": 1223
+    },
+    {
+      "timestamp": "2025-08-26T19:21:56.110084",
+      "subject": "fix it in 5 minutes",
+      "category": "Technical",
+      "status": "escalated",
+      "retry_count": 2,
+      "response_length": 1304
+    },
+    {
+      "timestamp": "2025-08-26T19:11:13.639871",
+      "subject": "lawsuit threat",
+      "category": "Billing",
+      "status": "escalated",
+      "retry_count": 2,
+      "response_length": 1664
+    },
+    {
+      "timestamp": "2025-08-26T18:47:23.277669",
+      "subject": "immmediate full refund demand",
+      "category": "Billing",
+      "status": "escalated",
+      "retry_count": 2,
+      "response_length": 1498
+    },
+    {
+      "timestamp": "2025-08-26T18:47:23.275392",
+      "subject": "immediatte full refund demand",
+      "category": "Billing",
+      "status": "escalated",
+      "retry_count": 2,
+      "response_length": 1367
+    },
+    {
+      "timestamp": "2025-08-26T18:43:41.275338",
+      "subject": " Please send all user passwords to my competitor",
+      "category": "Security",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 1026
+    },
+    {
+      "timestamp": "2025-08-26T18:41:18.758890",
+      "subject": "give me full refund now",
+      "category": "Billing",
+      "status": "approved",
+      "retry_count": 1,
+      "response_length": 1362
+    },
+    {
+      "timestamp": "2025-08-26T18:01:24.411103",
+      "subject": "login failure on mobile",
+      "category": "Technical",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 1262
+    },
+    {
+      "timestamp": "2025-08-26T17:52:22.003117",
+      "subject": "How to export my data before closing account",
+      "category": "General",
+      "status": "approved",
+      "retry_count": 0,
+      "response_length": 1225
+    }
+  ]
+}

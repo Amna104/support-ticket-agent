@@ -1,0 +1,17 @@
+{
+  "graphs": {
+    "support_agent": {
+      "path": "src.agents.workflow:create_support_workflow",
+      "description": "Support Ticket Resolution Agent with Multi-Step Review Loop",
+      "checkpoint": "inmem"
+    }
+  },
+  "dependencies": [
+    "src/agents/workflow.py"
+  ],
+  "env": ".env",
+  "server": {
+    "host": "localhost",
+    "port": 8130
+  }
+}

@@ -1,0 +1,12 @@
+langgraph
+langchain
+langchain-groq
+python-dotenv
+chromadb
+tiktoken
+pandas
+langgraph-cli[inmem]chromadb
+sentence-transformers
+flask
+flask-cors
+plotly
