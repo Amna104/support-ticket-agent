@@ -97,7 +97,7 @@ python app.py "Legal threat" "I need $1000 full refund"
 ```
 ## 🏗️ Architecture & Design Decisions
 ### 📋 System Architecture
-Input → Classification → Context Retrieval → Draft Generation → Review → [Approved?] → Output
+Input → Classification → Context Retrieval → Draft Generation → Review → [Approved?] → Output 
                                      ↑           ↓                    ↓
                                      └── Retry Loop (max 2) → Escalation → CSV Log
 
