@@ -84,7 +84,7 @@ python test_workflow.py
 python test_escalation.py
 ```
 
-## Test Specific Scenarios
+### Test Specific Scenarios
 ```bash
 # Happy path (should auto-approve)
 python app.py "Password reset" "I forgot my password"
@@ -95,8 +95,8 @@ python app.py "Refund policy" "What's your refund policy?"
 # Escalation scenario (should escalate to human)
 python app.py "Legal threat" "I need $1000 full refund"
 ```
-### 🏗️ Architecture & Design Decisions
-## 📋 System Architecture
+## 🏗️ Architecture & Design Decisions
+### 📋 System Architecture
 Input → Classification → Context Retrieval → Draft Generation → Review → [Approved?] → Output
                                      ↑           ↓                    ↓
                                      └── Retry Loop (max 2) → Escalation → CSV Log
