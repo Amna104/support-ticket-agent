@@ -24,7 +24,7 @@ A sophisticated AI-powered support ticket resolution system built with LangGraph
 
 ### 1. Clone and setup environment
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Amna104/support-ticket-agent.git
 cd support-ticket-agent
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
