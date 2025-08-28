@@ -97,39 +97,75 @@ python app.py "Legal threat" "I need $1000 full refund"
 ```
 ## 🏗️ Architecture & Design Decisions
 ### 📋 System Architecture
-Input → Classification → Context Retrieval → Draft Generation → Review → [Approved?] → Output
-                                     ↑           ↓                    ↓
-                                     └── Retry Loop (max 2) → Escalation → CSV Log
+          ┌─────────┐
+          │  Input  │
+          └────┬────┘
+               │
+               ▼
+       ┌─────────────┐
+       │ Classification │
+       └────┬────────┘
+            │
+            ▼
+     ┌───────────────┐
+     │ Context Retrieval │
+     └────┬─────────┘
+            │
+            ▼
+     ┌───────────────┐
+     │ Draft Generation │
+     └────┬─────────┘
+            │
+            ▼
+        ┌────────┐
+        │ Review │
+        └────┬───┘
+             │ Approved?
+         ┌───┴────┐
+         ▼        ▼
+      Output   Retry Loop
+                  │
+                  ▼
+             Escalation
+                  │
+                  ▼
+               CSV Log
 
 ## 🎯 Design Decisions
-### 1. LangGraph Framework Choice
-Why: Native support for state machines and cycles
-Benefits: Built-in persistence, visualization, and debugging
-Decision: Chosen over custom state management for reliability
-### 2. Modular Node Architecture
-Structure: Six specialized nodes with single responsibilities
-Benefits: Easy testing, maintenance, and component replacement
-Nodes: Classification, Retrieval, Drafting, Review, Retry, Escalation
-### 3. Dual Knowledge Base System
-Production: ChromaDB vector database with semantic search
-Development: Mock knowledge base for reliability
-Benefit: 100% uptime with automatic fallback
-### 4. Groq LLM Selection
-Why: Free API, fast inference, good performance
-Alternative Considered: OpenAI GPT-4 (cost-prohibitive)
-Decision: Optimal balance of cost and performance
-### 5. Security-First Approach
-Automatic redaction of technical security details
-Strict review policies to prevent over-disclosure
-Escalation for sensitive topics and policy violations
+
+- **LangGraph Framework Choice**
+  - **Why:** Native support for state machines and cycles  
+  - **Benefits:** Built-in persistence, visualization, and debugging  
+  - **Decision:** Chosen over custom state management for reliability  
+
+- **Modular Node Architecture**
+  - **Structure:** Six specialized nodes with single responsibilities  
+  - **Benefits:** Easy testing, maintenance, and component replacement  
+  - **Nodes:** Classification, Retrieval, Drafting, Review, Retry, Escalation  
+
+- **Dual Knowledge Base System**
+  - **Production:** ChromaDB vector database with semantic search  
+  - **Development:** Mock knowledge base for reliability  
+  - **Benefit:** 100% uptime with automatic fallback  
+
+- **Groq LLM Selection**
+  - **Why:** Free API, fast inference, good performance  
+  - **Alternative Considered:** OpenAI GPT-4 (cost-prohibitive)  
+  - **Decision:** Optimal balance of cost and performance  
+
+- **Security-First Approach**
+  - Automatic redaction of technical security details 
+  - Strict review policies to prevent over-disclosure 
+  - Escalation for sensitive topics and policy violations
 
 ## 🔄 Workflow Nodes
-Classification Node: Categorizes tickets using LLM
-Retrieval Node: Fetches context from knowledge base
-Draft Node: Generates responses using ticket + context
-Review Node: Validates policy compliance and quality
-Retry Node: Refines context based on feedback
-Escalation Node: Handles human review cases
+
+- **Classification Node:** Categorizes tickets using LLM  
+- **Retrieval Node:** Fetches context from knowledge base  
+- **Draft Node:** Generates responses using ticket + context  
+- **Review Node:** Validates policy compliance and quality  
+- **Retry Node:** Refines context based on feedback  
+- **Escalation Node:** Handles human review cases  
 
 ## 🗃️ Data Management
 ### State Management
@@ -144,11 +180,13 @@ class State(TypedDict):
     messages: add_messages
 ```
 
-## Knowledge Bases
-Billing: Payment methods, refund policies, subscriptions
-Technical: Troubleshooting, API docs, system requirements
-Security: Security practices, authentication, policies
-General: Support hours, account management, FAQs
+## 📚 Knowledge Bases
+
+- **Billing:** Payment methods, refund policies, subscriptions  
+- **Technical:** Troubleshooting, API docs, system requirements  
+- **Security:** Security practices, authentication, policies  
+- **General:** Support hours, account management, FAQs  
+
 
 ## 📁 Project Structure
 ```bash
