@@ -101,29 +101,29 @@ Input → Classification → Context Retrieval → Draft Generation → Review �
                                      ↑           ↓                    ↓
                                      └── Retry Loop (max 2) → Escalation → CSV Log
 
-### 🎯 Design Decisions
-## 1. LangGraph Framework Choice
+## 🎯 Design Decisions
+### 1. LangGraph Framework Choice
 Why: Native support for state machines and cycles
 Benefits: Built-in persistence, visualization, and debugging
 Decision: Chosen over custom state management for reliability
-## 2. Modular Node Architecture
+### 2. Modular Node Architecture
 Structure: Six specialized nodes with single responsibilities
 Benefits: Easy testing, maintenance, and component replacement
 Nodes: Classification, Retrieval, Drafting, Review, Retry, Escalation
-## 3. Dual Knowledge Base System
+### 3. Dual Knowledge Base System
 Production: ChromaDB vector database with semantic search
 Development: Mock knowledge base for reliability
 Benefit: 100% uptime with automatic fallback
-## 4. Groq LLM Selection
+### 4. Groq LLM Selection
 Why: Free API, fast inference, good performance
 Alternative Considered: OpenAI GPT-4 (cost-prohibitive)
 Decision: Optimal balance of cost and performance
-## 5. Security-First Approach
+### 5. Security-First Approach
 Automatic redaction of technical security details
 Strict review policies to prevent over-disclosure
 Escalation for sensitive topics and policy violations
 
-### 🔄 Workflow Nodes
+## 🔄 Workflow Nodes
 Classification Node: Categorizes tickets using LLM
 Retrieval Node: Fetches context from knowledge base
 Draft Node: Generates responses using ticket + context
@@ -131,8 +131,8 @@ Review Node: Validates policy compliance and quality
 Retry Node: Refines context based on feedback
 Escalation Node: Handles human review cases
 
-### 🗃️ Data Management
-## State Management
+## 🗃️ Data Management
+### State Management
 ```bash
 class State(TypedDict):
     ticket: Ticket
@@ -144,13 +144,13 @@ class State(TypedDict):
     messages: add_messages
 ```
 
-### Knowledge Bases
+## Knowledge Bases
 Billing: Payment methods, refund policies, subscriptions
 Technical: Troubleshooting, API docs, system requirements
 Security: Security practices, authentication, policies
 General: Support hours, account management, FAQs
 
-### 📁 Project Structure
+## 📁 Project Structure
 ```bash
 src/
 ├── agents/           # LangGraph nodes
@@ -176,7 +176,7 @@ src/
     └── templates/    # HTML templates
 ```
 
-### Support
+## Support
 For issues and questions:
 
 Check existing tests and examples
